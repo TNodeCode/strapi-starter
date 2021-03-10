@@ -1,0 +1,18 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: '3.1'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: strapi-app
+    restart: always
+    volumes:
+      - ./.cache/:/app/.cache
+      - ./.tmp/:/app/.tmp
+      - ./api:/app/api
+      - ./build:/app/build
+    ports:
+      - '1337:1337'
